@@ -1,38 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-
-        android:layout_marginTop="15dp"
-        android:id="@+id/number_one"
+    <RelativeLayout
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
+        <EditText
+            android:id="@+id/number_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="number"
+            android:layout_marginLeft="@dimen/dimen_margin"
+            android:layout_marginRight="@dimen/dimen_margin"
+            android:inputType="number"
+            android:layout_toLeftOf="@+id/checkBox1"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginTop="15dp"
-        android:id="@+id/number_two"
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dimen_margin">
+
+        </CheckBox>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number_one" />
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_marginTop="15dp"
-        android:id="@+id/number_three"
+        <EditText
+
+            android:id="@+id/number_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="number"
+            android:layout_marginLeft="@dimen/dimen_margin"
+            android:layout_marginRight="@dimen/dimen_margin"
+            android:inputType="number"
+            android:layout_toLeftOf="@+id/checkBox2"
+            android:textColorHint="#000" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dimen_margin">
+
+        </CheckBox>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/number_two"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"  />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout2"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+
+            android:id="@+id/number_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="number"
+            android:layout_marginLeft="@dimen/dimen_margin"
+            android:layout_marginRight="@dimen/dimen_margin"
+            android:inputType="number"
+            android:layout_toLeftOf="@+id/checkBox3"
+            android:textColorHint="#000" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dimen_margin">
+
+        </CheckBox>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dimen_margin"
+        android:paddingHorizontal="@dimen/dimen_margin"
+        android:orientation="horizontal"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/add"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:text="+"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"/>
+        <Button
+            android:id="@+id/less"
+            android:layout_marginLeft="@dimen/dimen_margin"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:text="-"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"/>
+        <Button
+            android:id="@+id/multiplication"
+            android:layout_marginHorizontal="@dimen/dimen_margin"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:text="X"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"/>
+        <Button
+            android:id="@+id/division"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:text="/"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"/>
+    </LinearLayout>
+    <View
+        android:layout_marginHorizontal="@dimen/dimen_margin"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/dimen_margin"
+        android:background="#000"/>
+    <RelativeLayout
+        android:paddingHorizontal="@dimen/dimen_margin"
+        android:layout_marginTop="@dimen/dimen_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Hasil : "
+            android:textStyle="bold"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="1"
+            android:id="@+id/tv_result"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>
